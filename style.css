@@ -1,0 +1,222 @@
+*::selection {
+  background-color: salmon;
+}
+
+.vdodiv {
+  clip-path: circle(var(--clip) at 50% 50%);
+}
+
+body[theme="black"] {
+  background-color: black;
+  color: white;
+}
+
+body[theme="white"] {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+body[theme="blue"] {
+  background-color: rgb(134, 132, 233);
+  color: rgb(4, 33, 97);
+}
+
+body[theme="peace"] {
+  background-color: rgb(240, 221, 235);
+  color: rgb(212, 122, 224);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.gallery {
+  padding: 0px;
+  text-align: center;
+}
+
+.gallery h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.event-section {
+  margin-bottom: 40px;
+}
+
+.event-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* Default: 1 image per row (small screens) */
+.gallery-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+/* For medium screens (min-width: 768px), display 3 images per row */
+@media (min-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For large screens and above (min-width: 1024px), display 4 images per row */
+@media (min-width: 1024px) {
+  .gallery-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.gallery-item {
+  width: 100%;
+  padding-top: 75%; /* 4:3 aspect ratio */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+/* Footer Section */
+/* Footer Section with Black Background */
+/* Footer Section with Black Background */
+.footer {
+  background-color: #000; /* Black background */
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid #333;
+}
+
+.footer h2 {
+  font-size: 1.8em; /* Slightly smaller title */
+  margin-bottom: 20px; /* Reduced margin */
+  color: #fff; /* White text */
+}
+
+/* Sponsor logos and names */
+.sponsors-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px; /* Smaller gap between sponsor cards */
+}
+
+/* Medium screens: 3 sponsors per row */
+@media (min-width: 768px) {
+  .sponsors-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large screens and above: 5 sponsors per row */
+@media (min-width: 1024px) {
+  .sponsors-container {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.sponsor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px; /* Reduced padding */
+  background-color: #1a1a1a; /* Dark background for each sponsor */
+  border-radius: 6px; /* Smaller border radius */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Reduced shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sponsor img {
+  width: 80px; /* Smaller logo size */
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effects */
+.sponsor:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1); /* Softer shadow on hover */
+}
+
+.sponsor img:hover {
+  transform: scale(1.1);
+}
+/* Social Media Section */
+.social-media {
+  background-color: #000; /* Black background */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.social-media h2 {
+  font-size: 2em;
+  color: #fff; /* White text */
+  margin-bottom: 20px;
+}
+
+/* Social media icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: #fff; /* White icon color */
+  font-size: 2em; /* Icon size */
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Hover effects */
+.social-icons a:hover {
+  color: #1da1f2; /* Change color on hover (example: Twitter blue) */
+  transform: scale(1.1); /* Slight zoom on hover */
+}
